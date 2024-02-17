@@ -8,17 +8,17 @@ public class Main {
 
         EmployeeBook employeeBook = new EmployeeBook();
 
-        employeeBook.addEmployee("Даша", 1, 10_000);
-        employeeBook.addEmployee("Паша", 1, 20_000);
-        employeeBook.addEmployee("Маша", 2, 30_000);
-        employeeBook.addEmployee("Саша", 2, 40_000);
-        employeeBook.addEmployee("Гриша", 3, 50_000);
+        employeeBook.addEmployee(1,"Даша", 1, 10_000);
+        employeeBook.addEmployee(2,"Паша", 1, 20_000);
+        employeeBook.addEmployee(3,"Маша", 2, 30_000);
+        employeeBook.addEmployee(4,"Саша", 2, 40_000);
+        employeeBook.addEmployee(5,"Гриша", 3, 50_000);
 
-        employeeBook.addEmployee("Наташа", 3, 60_000);
-        employeeBook.addEmployee("Гоша", 4, 70_000);
-        employeeBook.addEmployee("Алеша", 4, 80_000);
-        employeeBook.addEmployee("Дима", 5, 90_000);
-        employeeBook.addEmployee("Толя", 5, 100_000);
+        employeeBook.addEmployee(6,"Наташа", 3, 60_000);
+        employeeBook.addEmployee(7,"Гоша", 4, 70_000);
+        employeeBook.addEmployee(8,"Алеша", 4, 80_000);
+        employeeBook.addEmployee(9,"Дима", 5, 90_000);
+        employeeBook.addEmployee(10,"Толя", 5, 100_000);
 
         employeeBook.printEmployees();
 
@@ -49,7 +49,7 @@ public class Main {
 
         employeeBook.getEmployeeForID(1);
 
-        employeeBook.addEmployee("Ян", 1, 33_222);
+        employeeBook.addEmployee(1,"Ян", 1, 33_222);
 
         employeeBook.printEmployees();
 

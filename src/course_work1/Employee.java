@@ -4,21 +4,17 @@ import java.util.Objects;
 
 public class Employee {
     //поля класса
+    private int id;
     private String name;
     private int department;
     private int salary;
 
-    //счетчик
-    private static int id;
-    private int counterID;
-
     //конструктор
-    public Employee(String name, int department, int salary) {
+    public Employee(int id, String name, int department, int salary) {
         this.name = name;
         this.department = department;
         this.salary = salary;
-        id++;
-        this.counterID = id;
+        this.id = id;
     }
 
     //геттеры и сеттеры + equals, hashCode, toString
@@ -34,8 +30,8 @@ public class Employee {
         return salary;
     }
 
-    public int getCounterID() {
-        return counterID;
+    public int getId() {
+        return id;
     }
 
     public void setDepartment(int department) {
@@ -51,20 +47,7 @@ public class Employee {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return department == employee.department && salary == employee.salary && Objects.equals(name, employee.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, department, salary);
-    }
-
-    @Override
     public String toString() {
-        return counterID + ") " + name + " из " + department + " отдела. З/п составила: " + salary + " рублей.";
+        return id + ") " + name + " из " + department + " отдела. З/п составила: " + salary + " рублей.";
     }
 }
