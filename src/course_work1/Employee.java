@@ -1,20 +1,21 @@
 package course_work1;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class Employee {
     //поля класса
-    private int id;
+    private String id;
     private String name;
     private int department;
     private int salary;
 
     //конструктор
-    public Employee(int id, String name, int department, int salary) {
+    public Employee(String name, int department, int salary) {
         this.name = name;
         this.department = department;
         this.salary = salary;
-        this.id = id;
+        this.id = UUID.randomUUID().toString();
     }
 
     //геттеры и сеттеры + equals, hashCode, toString
@@ -30,7 +31,7 @@ public class Employee {
         return salary;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -44,6 +45,19 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(id, employee.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override

@@ -164,10 +164,10 @@ public class EmployeeBook {
         }
     }
 
-    public void addEmployee(int id, String name, int department, int salary) {
+    public void addEmployee(String name, int department, int salary) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] == null) {
-                Employee newEmployee = new Employee(id, name, department, salary);
+                Employee newEmployee = new Employee(name, department, salary);
                 employees[i] = newEmployee;
                 return;
             }
@@ -176,17 +176,19 @@ public class EmployeeBook {
 
     public void removeEmployee(int id) {
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getId() == id) {
+            if (employees[i].getId().equals(id)) {
                 System.out.println("Сотрудник " + employees[i].getName() + " удален");
                 employees[i] = null;
+                break;
             }
         }
     }
 
     public void getEmployeeForID(int id) {
         for (Employee employee : employees) {
-            if (employee != null && employee.getId() == id) {
+            if (employee != null && employee.getId().equals(id)) {
                 System.out.println(employee);
+                break;
             }
         }
     }
