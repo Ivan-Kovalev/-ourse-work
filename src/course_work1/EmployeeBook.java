@@ -143,7 +143,7 @@ public class EmployeeBook {
     public void printEmployeesForDep(int department) {
         for (Employee employee : employees) {
             if (employee != null && employee.getDepartment() == department) {
-                System.out.println(employee.getId() + ") " + employee.getName() + ". З/п составила: " + employee.getSalary() + " рублей.");
+                System.out.println(employee.getId() + " - " + employee.getName() + " из " + employee.getDepartment() + " отдела. З/п составила: " + employee.getSalary() + " рублей.");
             }
         }
     }
@@ -151,7 +151,7 @@ public class EmployeeBook {
     public void printSalaryLessThan(int number) {
         for (Employee employee : employees) {
             if (employee != null && employee.getSalary() < number) {
-                System.out.println(employee.getId() + ") " + employee.getName() + ". З/п составила: " + employee.getSalary() + " рублей.");
+                System.out.println(employee.getId() + " - " + employee.getName() + " из " + employee.getDepartment() + " отдела. З/п составила: " + employee.getSalary() + " рублей.");
             }
         }
     }
@@ -159,7 +159,7 @@ public class EmployeeBook {
     public void printSalaryMoreThan(int number) {
         for (Employee employee : employees) {
             if (employee != null && employee.getSalary() > number) {
-                System.out.println(employee.getId() + ") " + employee.getName() + ". З/п составила: " + employee.getSalary() + " рублей.");
+                System.out.println(employee.getId() + " - " + employee.getName() + " из " + employee.getDepartment() + " отдела. З/п составила: " + employee.getSalary() + " рублей.");
             }
         }
     }
@@ -174,9 +174,9 @@ public class EmployeeBook {
         }
     }
 
-    public void removeEmployee(int id) {
+    public void removeEmployee(String name) {
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getId().equals(id)) {
+            if (employees[i].getName().equals(name)) {
                 System.out.println("Сотрудник " + employees[i].getName() + " удален");
                 employees[i] = null;
                 break;
@@ -184,10 +184,13 @@ public class EmployeeBook {
         }
     }
 
-    public void getEmployeeForID(int id) {
+    public void getEmployeeForID(String name) {
         for (Employee employee : employees) {
-            if (employee != null && employee.getId().equals(id)) {
+            if (employee != null && employee.getName().equals(name)) {
                 System.out.println(employee);
+                break;
+            } else {
+                System.out.println("Сотрудник " + name + " не найден");
                 break;
             }
         }

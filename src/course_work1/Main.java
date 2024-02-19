@@ -21,33 +21,36 @@ public class Main {
         employeeBook.addEmployee("Толя", 5, 100_000);
 
         employeeBook.printEmployees();
-
         System.out.println("Затраты на зп: " + employeeBook.calculateTotalSalary());
+        System.out.println("------------------------------");
 
         employeeBook.findMinSalary();
         employeeBook.findMaxSalary();
-
         System.out.println("Средняя зп: " + employeeBook.averageSalary());
+        System.out.println("------------------------------");
 
         employeeBook.printNameEmployees();
+        System.out.println("------------------------------");
 
         employeeBook.indexSalary(5);
-
         employeeBook.findMinSalaryForDep(3);
         employeeBook.findMaxSalaryForDep(4);
-
         System.out.println("Cредняя зп 5 отдела: " + employeeBook.averageSalaryForDep(5));
+        System.out.println("------------------------------");
 
         employeeBook.indexSalaryForDep(2, 10);
-
-        employeeBook.printEmployeesForDep(1);
+        employeeBook.printEmployeesForDep(2);
+        System.out.println("------------------------------");
 
         employeeBook.printSalaryLessThan(50_000);
+        System.out.println("------------------------------");
+
         employeeBook.printSalaryMoreThan(70_000);
+        System.out.println("------------------------------");
 
-        employeeBook.removeEmployee(1);
-
-        employeeBook.getEmployeeForID(1);
+        employeeBook.removeEmployee("Даша");
+        employeeBook.getEmployeeForID("Даша");
+        System.out.println("------------------------------");
 
         employeeBook.addEmployee("Ян", 1, 33_222);
 

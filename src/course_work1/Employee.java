@@ -52,16 +52,16 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(id, employee.id);
+        return Objects.equals(name, employee.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
-        return id + ") " + name + " из " + department + " отдела. З/п составила: " + salary + " рублей.";
+        return id + " - " + name + " из " + department + " отдела. З/п составила: " + salary + " рублей.";
     }
 }
