@@ -49,7 +49,7 @@ public class Main {
         System.out.println("------------------------------");
 
         employeeBook.removeEmployee("Даша");
-        employeeBook.getEmployeeForID("Даша");
+        employeeBook.findEmployee("Даша");
         System.out.println("------------------------------");
 
         employeeBook.addEmployee("Ян", 1, 33_222);
